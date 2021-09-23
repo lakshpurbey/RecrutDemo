@@ -1,2 +1,1 @@
-# RecrutDemo
-iOS App Interview
+# My project's README
