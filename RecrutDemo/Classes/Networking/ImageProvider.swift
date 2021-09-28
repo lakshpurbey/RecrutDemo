@@ -21,7 +21,7 @@ class ImageProvider {
             return
         }
         
-        var imageName = self.imageName(for: url)
+        let imageName = self.imageName(for: url) //Change var to Let because Variable 'imageName' was never mutated; consider changing to 'let' constant
         queue.async { [weak self] in
             
             self?.downloadImage(from: url, saveAs: imageName, completion: { (image, urlString) in
