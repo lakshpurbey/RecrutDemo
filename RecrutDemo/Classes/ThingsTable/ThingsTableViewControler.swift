@@ -6,8 +6,8 @@ class ThingsTableViewControler: UITableViewController, Transition {
     struct TableViewConstants {
         
         static let cellIdentifier = "Cell"
-        static let rowHeight: CGFloat = 80
-        static let estimatedRowHeight: CGFloat = 80
+        static let rowHeight: CGFloat = 60
+//        static let estimatedRowHeight: CGFloat = 80
     }
     
 
@@ -24,11 +24,11 @@ class ThingsTableViewControler: UITableViewController, Transition {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = TableViewConstants.estimatedRowHeight
+//        tableView.estimatedRowHeight = TableViewConstants.estimatedRowHeight
         tableView.rowHeight = TableViewConstants.rowHeight
         tableView.separatorColor = UIColor.red
         tableView.separatorStyle = .singleLine
-     
+        
 
     }
     
@@ -39,6 +39,9 @@ class ThingsTableViewControler: UITableViewController, Transition {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell: ThingCell? = tableView.dequeueReusableCell(withIdentifier: TableViewConstants.cellIdentifier) as? ThingCell
+        
+        cell?.backgroundColor = UIColor.red
+        
         
         if cell == nil {
             cell = ThingCell()

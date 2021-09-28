@@ -40,8 +40,12 @@ class ThingCell: UITableViewCell {
 
         thingImage.contentMode = .scaleAspectFit
   
-        contentView.backgroundColor = UIColor.clear
-        backgroundColor = UIColor.clear
+        if #available(iOS 13.0, *) {
+            contentView.backgroundColor = UIColor.darkGray
+        } else {
+            // Fallback on earlier versions
+        }
+//        backgroundColor = UIColor.lightGray // No need this because we have already mention content view
         contentView.addSubview(nameLabel)
         contentView.addSubview(thingImage)
         contentView.addSubview(likeImage)
@@ -67,6 +71,7 @@ class ThingCell: UITableViewCell {
         let origin = CGPoint(x: 80.0, y: 15.5)
         let size = CGSize(width: bounds.width - origin.x, height: 20)
         nameLabel.frame = CGRect(origin: origin, size: size)
+        nameLabel.textColor = UIColor.white
         
         let imageOrigin = CGPoint(x: 10.0, y: 5.5)
         let imageSize = CGSize(width: 50.0, height: 50.0)
@@ -76,7 +81,7 @@ class ThingCell: UITableViewCell {
         let likeSize = CGSize(width: 40.0, height: 40.0)
         likeImage.frame = CGRect(origin: likeOrigin, size: likeSize)
         
-//        background.frame = bounds
+        background.frame = bounds
     }
     
     func setupImageView() {
