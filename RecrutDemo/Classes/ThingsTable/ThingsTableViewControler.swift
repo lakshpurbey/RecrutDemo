@@ -30,7 +30,6 @@ class ThingsTableViewControler: UITableViewController, Transition {
         tableView.separatorStyle = .singleLine
      
 
-
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,9 +60,10 @@ class ThingsTableViewControler: UITableViewController, Transition {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRow(at: indexPath, animated: true)
+//        tableView.deselectRow(at: indexPath, animated: true)
         let thingModel = viewModel.thing(for: indexPath)
         pushDetailsViewController(thingModel)
+        
     }
     
     func pushDetailsViewController(_ thingModel: ThingModel) {
@@ -72,8 +72,10 @@ class ThingsTableViewControler: UITableViewController, Transition {
         detailsViewController.thingModel = thingModel
         detailsViewController.imageProvider = viewModel.imageProvider
         detailsViewController.delegate = self
-        let navigationContorller = UINavigationController(rootViewController: detailsViewController)
-        pushViewControler(navigationContorller, animated: true)
+        
+        self.present(detailsViewController, animated: true, completion: nil)
+//        let navigationContorller = UINavigationController(rootViewController: detailsViewController)
+//        pushViewControler(navigationContorller, animated: true)
     }
 }
 
