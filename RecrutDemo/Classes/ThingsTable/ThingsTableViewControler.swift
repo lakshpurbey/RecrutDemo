@@ -10,6 +10,7 @@ class ThingsTableViewControler: UITableViewController, Transition {
         static let estimatedRowHeight: CGFloat = 180
     }
     
+
     var viewModel = ThingsTableViewModel()
     
     convenience init() {
@@ -25,8 +26,11 @@ class ThingsTableViewControler: UITableViewController, Transition {
         
         tableView.estimatedRowHeight = TableViewConstants.estimatedRowHeight
         tableView.rowHeight = TableViewConstants.rowHeight
-        tableView.separatorColor = UIColor.black
+        tableView.separatorColor = UIColor.red
         tableView.separatorStyle = .singleLine
+     
+
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -6,6 +6,8 @@ class ThingCell: UITableViewCell {
     
     private let thingImage = UIImageView()
     private let likeImage = UIImageView()
+    let mySeparator = UIView()
+
     private lazy var nameLabel: UILabel = {
         
         let label = UILabel()
@@ -30,6 +32,12 @@ class ThingCell: UITableViewCell {
         background.backgroundColor = UIColor(white: 0.9, alpha: 0.1)
         contentView.addSubview(background)
         
+        mySeparator.layer.borderColor = UIColor.green.cgColor
+        mySeparator.layer.borderWidth = 2.0
+        mySeparator.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(mySeparator)
+
+
         thingImage.contentMode = .scaleAspectFit
   
         contentView.backgroundColor = UIColor.clear
