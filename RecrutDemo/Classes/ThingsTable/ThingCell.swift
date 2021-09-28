@@ -31,12 +31,6 @@ class ThingCell: UITableViewCell {
         
         background.backgroundColor = UIColor(white: 0.9, alpha: 0.1)
         contentView.addSubview(background)
-        
-        mySeparator.layer.borderColor = UIColor.green.cgColor
-        mySeparator.layer.borderWidth = 2.0
-        mySeparator.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(mySeparator)
-
 
         thingImage.contentMode = .scaleAspectFit
   
@@ -68,10 +62,11 @@ class ThingCell: UITableViewCell {
     
     override func layoutSubviews() {
     
-        let origin = CGPoint(x: 80.0, y: 15.5)
+        let origin = CGPoint(x: 80.0, y: 10.5)
         let size = CGSize(width: bounds.width - origin.x, height: 20)
         nameLabel.frame = CGRect(origin: origin, size: size)
         nameLabel.textColor = UIColor.white
+        nameLabel.numberOfLines = 2
         
         let imageOrigin = CGPoint(x: 10.0, y: 5.5)
         let imageSize = CGSize(width: 50.0, height: 50.0)
