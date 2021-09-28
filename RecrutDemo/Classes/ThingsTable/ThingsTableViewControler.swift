@@ -6,8 +6,8 @@ class ThingsTableViewControler: UITableViewController, Transition {
     struct TableViewConstants {
         
         static let cellIdentifier = "Cell"
-        static let rowHeight: CGFloat = 60
-        static let estimatedRowHeight: CGFloat = 180
+        static let rowHeight: CGFloat = 80
+        static let estimatedRowHeight: CGFloat = 200
     }
     
 
@@ -73,7 +73,8 @@ class ThingsTableViewControler: UITableViewController, Transition {
         detailsViewController.imageProvider = viewModel.imageProvider
         detailsViewController.delegate = self
         
-        self.present(detailsViewController, animated: true, completion: nil)
+        self.present(detailsViewController, animated: true, completion: nil) //Remove Navigation Controller because i dont like page switch in back mode
+        
 //        let navigationContorller = UINavigationController(rootViewController: detailsViewController)
 //        pushViewControler(navigationContorller, animated: true)
     }
@@ -84,17 +85,23 @@ extension ThingsTableViewControler: ThingDetailsDelegate {
     func thingDetails(viewController: ThingDetailsViewController, didLike thingModel: inout ThingModel) {
         
         thingModel.setLike(value: true)
-        popViewController(viewController, animated: true)
+//        popViewController(viewController, animated: true)
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     func thingDetails(viewController: ThingDetailsViewController, didDislike thingModel: inout ThingModel) {
         
         thingModel.setLike(value: false)
-        popViewController(viewController, animated: true)
+//        popViewController(viewController, animated: true)
+        self.dismiss(animated: true, completion: nil)
+
     }
     
     func thingDetails(viewController: ThingDetailsViewController, willDismiss thingModel: inout ThingModel) {
-        popViewController(viewController, animated: true)
+//        popViewController(viewController, animated: true)
+        self.dismiss(animated: true, completion: nil)
+
     }
 }
 
