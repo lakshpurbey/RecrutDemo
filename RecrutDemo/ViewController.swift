@@ -12,12 +12,13 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
      
-        if tableViewController == nil {
+        //No need to check Tableviewcontroller nil 
+//        if tableViewController == nil {
             let tableView = ThingsTableViewControler()
             tableView.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
             present(tableView, animated: false, completion: nil)
             tableViewController = tableView
-        }
+//        }
     }
 }
 

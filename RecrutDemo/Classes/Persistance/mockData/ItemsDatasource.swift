@@ -36,7 +36,7 @@ struct ItemsDatasource {
                     let imageArray = entityDict["image"] as? Array<String>
                     let urlString = imageArray?.first
                     item.image = urlString
-                    print("\(item.name) \(urlString)")
+                    print("\(item.name) \(String(describing: urlString))")
                     allItems.append(item)
                 }
             }
