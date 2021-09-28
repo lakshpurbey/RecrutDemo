@@ -7,7 +7,7 @@ class ThingsTableViewControler: UITableViewController, Transition {
         
         static let cellIdentifier = "Cell"
         static let rowHeight: CGFloat = 80
-        static let estimatedRowHeight: CGFloat = 200
+        static let estimatedRowHeight: CGFloat = 80
     }
     
 
@@ -87,20 +87,20 @@ extension ThingsTableViewControler: ThingDetailsDelegate {
         thingModel.setLike(value: true)
 //        popViewController(viewController, animated: true)
         
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil) // Keep this because we are using here present view
     }
     
     func thingDetails(viewController: ThingDetailsViewController, didDislike thingModel: inout ThingModel) {
         
         thingModel.setLike(value: false)
 //        popViewController(viewController, animated: true)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil) // Keep this because we are using here present view
 
     }
     
     func thingDetails(viewController: ThingDetailsViewController, willDismiss thingModel: inout ThingModel) {
 //        popViewController(viewController, animated: true)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil) // Keep this because we are using here present view
 
     }
 }

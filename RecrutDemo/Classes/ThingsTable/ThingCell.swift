@@ -64,8 +64,8 @@ class ThingCell: UITableViewCell {
     
     override func layoutSubviews() {
     
-        let origin = CGPoint(x: 80.0, y: 10.5)
-        let size = CGSize(width: bounds.width - origin.x, height: bounds.height)
+        let origin = CGPoint(x: 80.0, y: 15.5)
+        let size = CGSize(width: bounds.width - origin.x, height: 20)
         nameLabel.frame = CGRect(origin: origin, size: size)
         
         let imageOrigin = CGPoint(x: 10.0, y: 5.5)
@@ -76,7 +76,7 @@ class ThingCell: UITableViewCell {
         let likeSize = CGSize(width: 40.0, height: 40.0)
         likeImage.frame = CGRect(origin: likeOrigin, size: likeSize)
         
-        background.frame = bounds
+//        background.frame = bounds
     }
     
     func setupImageView() {
